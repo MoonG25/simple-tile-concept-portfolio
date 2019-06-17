@@ -4,6 +4,7 @@
   "main": "index.js",
   "private": true,
   "license": "MIT",
+  "homepage": "http://MoonG25.github.io/simple-tile-concept-portfolio",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
