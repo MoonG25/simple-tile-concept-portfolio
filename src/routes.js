@@ -10,6 +10,7 @@ import PortfolioPage from './pages/Portfolio';
 import PostsPage from './pages/Posts';
 import AboutPage from './pages/About';
 import TestPage from './pages/Test';
+import MovePage from './pages/Move';
 
 export default props => (
   <Switch>
@@ -20,5 +21,6 @@ export default props => (
     <Route exact path="/posts" component={PostsPage} />
     <Route exact path="/about" component={AboutPage} />
     <Route exact path="/test" component={TestPage} />
+    <Route exact path="/move" component={MovePage} />
   </Switch>
 );

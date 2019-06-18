@@ -64,6 +64,7 @@ class ScrollMenuComponent extends React.Component {
       { icon: 'C', name: 'Contact', to: '/contact' },
       { icon: 'P', name: 'Posts', to: '/posts' },
       { icon: 'T', name: 'Test', to: '/test' },
+      { icon: 'M', name: 'Move', to: '/move' },
     ];
     
     const renderMenus = menus.map(menu => (
