@@ -25,20 +25,21 @@ class MovePage extends React.Component {
 
     return (
       <ContainerComponent>
-        <div className="controller">
-          <label htmlFor="box-type">
-            <input type="checkbox" id="box-type" value={isChecked} onChange={() => this.handleChange()}/>
-            <span>box</span>
-          </label>
-        </div>
-        <div className="divider"></div>
         <div className="container">
+          <div className="controller">
+            <label htmlFor="box-type">
+              <input type="checkbox" id="box-type" value={isChecked} onChange={() => this.handleChange()}/>
+              <span>box</span>
+            </label>
+          </div>
+          <div className="divider"></div>
+
           <div className="section">
             <div className="description">
               3초동안 300px 이동
             </div>
             <div className="content">
-              <div className={`${type} left-to-right__3s`}></div>
+              <div className={`${type} rotate left-to-right__3s`}></div>
             </div>
           </div>
       

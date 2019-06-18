@@ -105,6 +105,9 @@ span {
 }
 
 /* animations */
+.rotate {
+  animation: rotation 2s infinite;
+}
 .left-to-right__3s {
   animation-name: left-to-right__3s;
   animation-duration: 3s;
@@ -177,8 +180,10 @@ span {
 
 /* @keyframes rules */
 @keyframes left-to-right__3s {
-  from { left: 0; }
-  to { left: 300px; }
+  from { left: 0; 
+    transform: rotate(0deg);}
+  to { left: 300px; 
+    transform: rotate(360deg);}
 }
 @keyframes left-to-right__3s_percent {
   0% { left: 0; }
@@ -236,5 +241,14 @@ span {
   to {
     top: calc(100% - 25px); 
     left: calc(100% - 25px); 
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
