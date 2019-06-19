@@ -30,65 +30,74 @@ class MovePage extends React.Component {
   state = {
     type: "square",
     isBox: true,
-    isRotate: false
+    isRotate: false,
   }
 
   handleChange = (e) => {
-    const isBox = !this.state.isBox;
-    const type = isBox ? "square" : "circle";
-    this.setState({ isBox, type });
+    const name = e.target.name;
+    const changedState = !this.state[name];
+    const type = (name !== 'isBox') ? this.state.type : (changedState) ? "square" : "circle";
+    this.setState({
+      [name]: changedState,
+      type
+    });
+    console.log(name, changedState)
   }
 
   render() {
-    const { type, isBox } = this.state;
+    const { type, isBox, isRotate } = this.state;
 
     return (
       <ContainerComponent>
         <div>
           <RemoteController>
-            <label htmlFor="box-type">
-              <input type="checkbox" id="box-type" checked={isBox} onChange={this.handleChange}/>
+            <label htmlFor="shape">
+              <input type="checkbox" id="shape" name="isBox" checked={isBox} onChange={this.handleChange}/>
               <span>square</span>
+            </label>
+            <label htmlFor="rotate">
+              <input type="checkbox" id="rotate" name="isRotate" checked={isRotate} onChange={this.handleChange}/>
+              <span>rotate</span>
             </label>
           </RemoteController>
           <Divider />
 
           <GridContainer type="row">
-            <GridSection description="300px 이동">
-              <Box type={type} classes="rotate left-to-right__3s" />
+            <GridSection description="left 50%, 3s">
+              <Box type={type} x={50} time={3} base="left" isRotate={isRotate} />
             </GridSection>
-            <GridSection description="300px 이동 2 step">
-              <Box type={type} classes="left-to-right__3s_percent" />
+            <GridSection description="left 50%, 3s, 10 step">
+              <Box type={type} x={50} time={3} step={10} base="left" isRotate={isRotate} />
             </GridSection>
-            <GridSection description="끝까지 이동">
-              <Box type={type} classes="left-to-right__3s_100percent" />
+            <GridSection description="left 100%, 3s">
+              <Box type={type} x={100} time={3} base="left" isRotate={isRotate} />
             </GridSection>
-            <GridSection description="반대로 300px 이동">
-              <Box type={type} classes="right-to-left__3s" />
+            <GridSection description="right 100%">
+              <Box type={type} x={100} time={3} base="right" isRotate={isRotate} />
             </GridSection>
           </GridContainer>
 
           <GridContainer type="column">
-            <GridSection minHeight="360px" description="위에서 아래로 이동">
-              <Box type={type} classes="up-to-down__3s" />
+            <GridSection minHeight="360px" description="top 50%, 3s">
+              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
             </GridSection>
-            <GridSection minHeight="360px" description="위에서 아래로 10 step">
-              <Box type={type} classes="up-to-down__3s_percent" />
+            <GridSection minHeight="360px" description="top 50%, 3s, 10 step">
+              <Box type={type} x={50} time={3} base="top" step={10} isRotate={isRotate} />
             </GridSection>
-            <GridSection minHeight="360px" description="아래서 위로">
-              <Box type={type} classes="down-to-up__3s" />
+            <GridSection minHeight="360px" description="bottom 50%, 3s">
+              <Box type={type} x={50} time={3} base="bottom" isRotate={isRotate} />
             </GridSection>
-            <GridSection minHeight="360px" description="아래서 위로 10 step">
-              <Box type={type} classes="down-to-up__3s_percent" />
-            </GridSection>
-            <GridSection minHeight="360px" description="아래서 위로">
-              <Box type={type} classes="down-to-up__3s" />
+            <GridSection minHeight="360px" description="bottom 50%, 3s, 10 step">
+              <Box type={type} x={50} time={3} base="bottom" step={10} isRotate={isRotate} />
             </GridSection>
             <GridSection minHeight="360px" description="아래서 위로">
-              <Box type={type} classes="down-to-up__3s" />
+              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
             </GridSection>
             <GridSection minHeight="360px" description="아래서 위로">
-              <Box type={type} classes="down-to-up__3s" />
+              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
+            </GridSection>
+            <GridSection minHeight="360px" description="아래서 위로">
+              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
             </GridSection>
           </GridContainer>
       

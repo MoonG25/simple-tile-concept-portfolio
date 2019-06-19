@@ -60,43 +60,6 @@ span {
 }
 
 /* animations */
-.rotate {
-  animation: rotation 2s infinite;
-}
-.left-to-right__3s {
-  animation-name: left-to-right__3s;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-.left-to-right__3s_percent {
-  animation-name: left-to-right__3s_percent;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-.left-to-right__3s_100percent {
-  animation-name: left-to-right__3s_100percent;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-.right-to-left__3s {
-  animation: right-to-left__3s 3s infinite alternate;
-}
-.up-to-down__3s {
-  animation: up-to-down__3s 3s infinite alternate;
-}
-.up-to-down__3s_percent {
-  animation: up-to-down__3s_percent 3s infinite alternate;
-}
-.down-to-up__3s {
-  animation: down-to-up__3s 3s infinite alternate;
-}
-.down-to-up__3s_percent {
-  animation: down-to-up__3s_percent 3s infinite alternate;
-}
-
 .left-up-right-down__3s-ease {
   animation: left-up-right-down__3s 3s infinite ease alternate;
 }
@@ -134,60 +97,6 @@ span {
 }
 
 /* @keyframes rules */
-@keyframes left-to-right__3s {
-  from { left: 0; 
-    transform: rotate(0deg);}
-  to { left: 300px; 
-    transform: rotate(360deg);}
-}
-@keyframes left-to-right__3s_percent {
-  0% { left: 0; }
-  50% { left: 150px; }
-  100% { left: 300px; }
-}
-@keyframes left-to-right__3s_100percent {
-  from { left: 0; }
-  to { left: calc(100% - 25px); }
-}
-@keyframes right-to-left__3s {
-  from { right: 0; }
-  to { right: 300px; }
-}
-@keyframes up-to-down__3s {
-  from { top: 0; }
-  to { top: calc(100% - 25px); }
-}
-@keyframes up-to-down__3s_percent {
-  0% { top: 0; }
-  10% { top: calc(10% - 2.5px); }
-  20% { top: calc(20% - 5px); }
-  30% { top: calc(30% - 7.5px); }
-  40% { top: calc(40% - 10px); }
-  50% { top: calc(50% - 12.5px); }
-  60% { top: calc(60% - 15px); }
-  70% { top: calc(70% - 17.5px); }
-  80% { top: calc(80% - 20px); }
-  90% { top: calc(90% - 22.5px); }
-  100% { top: calc(100% - 25px); }
-}
-@keyframes down-to-up__3s {
-  from { bottom: 0; }
-  to { bottom: calc(100% - 25px); }
-}
-@keyframes down-to-up__3s_percent {
-  0% { bottom: 0; }
-  10% { bottom: calc(10% - 2.5px); }
-  20% { bottom: calc(20% - 5px); }
-  30% { bottom: calc(30% - 7.5px); }
-  40% { bottom: calc(40% - 10px); }
-  50% { bottom: calc(50% - 12.5px); }
-  60% { bottom: calc(60% - 15px); }
-  70% { bottom: calc(70% - 17.5px); }
-  80% { bottom: calc(80% - 20px); }
-  90% { bottom: calc(90% - 22.5px); }
-  100% { bottom: calc(100% - 25px); }
-}
-
 @keyframes left-up-right-down__3s {
   from {
     top: 0;
