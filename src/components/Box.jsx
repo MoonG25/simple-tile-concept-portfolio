@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const move = (base, x, rotate) => keyframes`
   from {
@@ -13,51 +13,50 @@ const move = (base, x, rotate) => keyframes`
   }
 `;
 
-const SquareBox = styled.div`
+const CommonBox = styled.div`
   position: absolute;
   width: 25px;
   height: 25px;
   background-color: #123456;
-  clip-path: circle(0% 0%, 100% 0%, 0% 100%, 100% 100%);
-  animation: ${props => props.x ? move(props.base, props.x, props.isRotate) : 'none'} ${props => props.time}s infinite alternate;
-  ${props => props.step ? `animation-timing-function: steps(${props.step}, end)` : ''}
+  clip-path: ${props => props.clipPath};
+  animation: ${props => props.animation};
+  ${props => props.timing};
 `;
-
-const CircleBox = styled.div`
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #123456;
-  clip-path: circle(50% at 50% 50%);
-  animation: ${props => props.x ? move(props.base, props.x, props.isRotate) : 'none'} ${props => props.time}s infinite alternate;
-  ${props => props.step ? `animation-timing-function: steps(${props.step}, end)` : ''}
-`;
-
-const TriangleBox = styled.div`
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #123456;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: ${props => props.x ? move(props.base, props.x, props.isRotate) : 'none'} ${props => props.time}s infinite alternate;
-  ${props => props.step ? `animation-timing-function: steps(${props.step}, end)` : ''}
-`;
-
+// ${props => props.x ? move(props.base, props.x, props.isRotate) : 'none'} ${props => props.time}s infinite alternate
 class Box extends React.Component {
+  getClipPath(type) {
+    switch (type) {
+      case 'square': return 'circle(0% 0%, 100% 0%, 0% 100%, 100% 100%)';
+      case 'circle': return 'circle(50% at 50% 50%)';
+      case 'triangle': return 'polygon(50% 0%, 0% 100%, 100% 100%)';
+      default: return 'circle(0% 0%, 100% 0%, 0% 100%, 100% 100%)'
+    }
+  }
+
+  getAnimation(x, base, time, isRotate) {
+    if (x) {
+      return css`${move(base, x, isRotate)} ${time}s infinite alternate`;
+    } else {
+      return false;
+    }
+  }
+
+  getTiming(step) {
+    if (step) {
+      return `animation-timing-function: steps(${step}, end)`;
+    } else {
+      return false;
+    }
+  }
+
   render() {
-    const { type, classes, x, time, step, base, isRotate } = this.props;
+    const { type, x, base, time, step, isRotate } = this.props;
+    const clipPath = this.getClipPath(type);
+    const animation = this.getAnimation(x, base, time, isRotate);
+    const timing = this.getTiming(step);
     return (
       <React.Fragment>
-        {
-          (() => {
-            switch (type) {
-              case 'square': return <SquareBox x={x} time={time} step={step} base={base} isRotate={isRotate} />;
-              case 'circle': return <CircleBox x={x} time={time} step={step} base={base} isRotate={isRotate} />;
-              case 'triangle': return <TriangleBox x={x} time={time} step={step} base={base} isRotate={isRotate} />;
-              default: return <SquareBox x={x} time={time} step={step} base={base} isRotate={isRotate} />;
-            }
-          })()
-        }
+        <CommonBox clipPath={clipPath} animation={animation} timing={timing} />
       </React.Fragment>
     )
   }

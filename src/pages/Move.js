@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import './Move.css';
 
 // redux
-import { connect } from 'react-redux';
 
 // components
 import ContainerComponent from '../components/Container';
@@ -135,11 +134,5 @@ class MovePage extends React.Component {
     )
   }
 }
-
-const mapStateToProps = state => ({
-});
-
-const mapDispatchToProps = dispatch => ({
-});
 
 export default MovePage;

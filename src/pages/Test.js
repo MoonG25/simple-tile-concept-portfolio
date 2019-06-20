@@ -2,7 +2,6 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 // redux
-import { connect } from 'react-redux';
 
 // components
 import ContainerComponent from '../components/Container';
@@ -60,11 +59,5 @@ class TestPage extends React.Component {
     )
   }
 }
-
-const mapStateToProps = state => ({
-});
-
-const mapDispatchToProps = dispatch => ({
-});
 
 export default withStyles(styles)(TestPage);

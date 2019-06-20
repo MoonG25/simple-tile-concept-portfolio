@@ -39,6 +39,8 @@ class GridSection extends React.Component {
 }
 
 GridSection.propTypes = {
+  description: PropTypes.string,
+  minHeight: PropTypes.string,
 };
 
 export default GridSection;
