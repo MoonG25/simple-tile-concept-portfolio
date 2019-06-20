@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e60a882b3dacd83c890c7bb118245f25",
+    "revision": "4e61423333ef8168648e343bab33875f",
     "url": "/simple-tile-concept-portfolio/index.html"
   },
   {
-    "revision": "7ba1e266862fec109b73",
+    "revision": "835154070256cccb8769",
     "url": "/simple-tile-concept-portfolio/static/css/main.6af2b771.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simple-tile-concept-portfolio/static/js/2.29b4bbbc.chunk.js"
   },
   {
-    "revision": "7ba1e266862fec109b73",
-    "url": "/simple-tile-concept-portfolio/static/js/main.eab907c4.chunk.js"
+    "revision": "835154070256cccb8769",
+    "url": "/simple-tile-concept-portfolio/static/js/main.cbe8493d.chunk.js"
   },
   {
     "revision": "c6211368709629ed193b",
