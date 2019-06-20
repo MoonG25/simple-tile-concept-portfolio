@@ -63,70 +63,70 @@ class MovePage extends React.Component {
 
           <GridContainer type="row">
             <GridSection description="left 50%, 3s">
-              <Box type={type} x={50} time={3} base="left" isRotate={isRotate} />
+              <Box type={type} x={50} time={3} base1="left" isRotate={isRotate} />
             </GridSection>
             <GridSection description="left 50%, 3s, 10 step">
-              <Box type={type} x={50} time={3} step={10} base="left" isRotate={isRotate} />
+              <Box type={type} x={50} time={3} step={10} base1="left" isRotate={isRotate} />
             </GridSection>
             <GridSection description="left 100%, 3s">
-              <Box type={type} x={100} time={3} base="left" isRotate={isRotate} />
+              <Box type={type} x={100} time={3} base1="left" isRotate={isRotate} />
             </GridSection>
             <GridSection description="right 100%">
-              <Box type={type} x={100} time={3} base="right" isRotate={isRotate} />
+              <Box type={type} x={100} time={3} base1="right" isRotate={isRotate} />
             </GridSection>
           </GridContainer>
 
           <GridContainer type="column">
-            <GridSection minHeight="360px" description="top 50%, 3s">
-              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
+            <GridSection minHeight="360px" description="50%, 3s">
+              <Box type={type} x={50} time={3} base1="top" isRotate={isRotate} />
             </GridSection>
-            <GridSection minHeight="360px" description="top 50%, 3s, 10 step">
-              <Box type={type} x={50} time={3} base="top" step={10} isRotate={isRotate} />
+            <GridSection minHeight="360px" description="50%, 3s, 10 step">
+              <Box type={type} x={50} time={3} base1="top" step={10} isRotate={isRotate} />
             </GridSection>
-            <GridSection minHeight="360px" description="bottom 50%, 3s">
-              <Box type={type} x={50} time={3} base="bottom" isRotate={isRotate} />
+            <GridSection minHeight="360px" description="50%, 3s, ease-in">
+              <Box type={type} x={50} time={3} base1="bottom" isRotate={isRotate} bezier="ease-in"/>
             </GridSection>
-            <GridSection minHeight="360px" description="bottom 50%, 3s, 10 step">
-              <Box type={type} x={50} time={3} base="bottom" step={10} isRotate={isRotate} />
+            <GridSection minHeight="360px" description="50%, 3s, 10 step">
+              <Box type={type} x={50} time={3} base1="bottom" step={10} isRotate={isRotate} />
             </GridSection>
-            <GridSection minHeight="360px" description="아래서 위로">
-              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
+            <GridSection minHeight="360px" description="ease-in-out">
+              <Box type={type} x={100} time={3} base1="top" isRotate={isRotate} bezier="ease-in-out"/>
             </GridSection>
-            <GridSection minHeight="360px" description="아래서 위로">
-              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
+            <GridSection minHeight="360px" description="bezier(0.075, 0.82, 0.165, 1)">
+              <Box type={type} x={100} time={3} base1="top" isRotate={isRotate} bezier={[0.075, 0.82, 0.165, 1]}/>
             </GridSection>
-            <GridSection minHeight="360px" description="아래서 위로">
-              <Box type={type} x={50} time={3} base="top" isRotate={isRotate} />
+            <GridSection minHeight="360px" description="ease">
+              <Box type={type} x={100} time={3} base1="top" isRotate={isRotate} bezier="ease" />
             </GridSection>
           </GridContainer>
       
           <GridContainer type="row" count={3}>
-            <GridSection description="ease">
-              <Box type={type} classes="left-up-right-down__3s-ease" />
+            <GridSection minHeight="180px" description="ease">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier="ease" />
             </GridSection>
-            <GridSection description="ease-in">
-              <Box type={type} classes="left-up-right-down__3s-ease-in" />
+            <GridSection minHeight="180px" description="ease-in">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier="ease-in" />
             </GridSection>
-            <GridSection description="ease-in-out">
-              <Box type={type} classes="left-up-right-down__3s-ease-in-out" />
+            <GridSection minHeight="180px" description="ease-in-out">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier="ease-in-out" />
             </GridSection>
-            <GridSection description="ease-out">
-              <Box type={type} classes="left-up-right-down__3s-ease-out" />
+            <GridSection minHeight="180px" description="ease-out">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier="ease-out" />
             </GridSection>
-            <GridSection description="linear">
-              <Box type={type} classes="left-up-right-down__3s-linear" />
+            <GridSection minHeight="180px" description="linear">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier="linear" />
             </GridSection>
-            <GridSection description="custom cubic">
-              <Box type={type} classes="left-up-right-down__3s-custom-cubic" />
+            <GridSection minHeight="180px" description="custom bezier(0.123, 0.234, 0.345, 0.456)">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier={[0.123, 0.234, 0.345, 0.456]} />
             </GridSection>
-            <GridSection description="ease-out cubic">
-              <Box type={type} classes="left-up-right-down__3s-ease-out-cubic" />
+            <GridSection minHeight="180px" description="ease-out bezier(0.075, 0.82, 0.165, 1)">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier={[0.075, 0.82, 0.165, 1]} />
             </GridSection>
-            <GridSection description="ease-in cubic">
-              <Box type={type} classes="left-up-right-down__3s-ease-in-cubic" />
+            <GridSection minHeight="180px" description="ease-in bezier(0.47, 0, 0.745, 0.715)">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier={[0.47, 0, 0.745, 0.715]} />
             </GridSection>
-            <GridSection description="ease-in-out cubic">
-              <Box type={type} classes="left-up-right-down__3s-ease-in-out-cubic" />
+            <GridSection minHeight="180px" description="ease-in-out bezier(0.77, 0, 0.175, 1)">
+              <Box type={type} x={100} time={3} base1="left" base2="top" isRotate={isRotate} isDiagonal={true} bezier={[0.77, 0, 0.175, 1]} />
             </GridSection>
           </GridContainer>
         </div>
