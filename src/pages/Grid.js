@@ -50,7 +50,6 @@ class GridPage extends React.Component {
   handleGridChange = name => (event, value) => {
     const { grid } = this.state;
     grid[name] = value === '' ? '' : Number(value);
-    console.log(grid[name])
     this.setState({ grid });
   }
 

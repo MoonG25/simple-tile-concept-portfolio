@@ -2,11 +2,8 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components';
 
 const expand = keyframes`
-  0% {
-    height: 0%;
-  }
-  100% {
-    height: 100%;
+  to {
+    transform: translateY(0);
   }
 `;
 
@@ -19,7 +16,8 @@ const Grid = styled.div`
 
 const Box = styled.div`
   border: 1px solid black;
-  animation: ${expand} .3s linear;
+  transform: translateY(-50px);
+  animation: ${expand} .3s ease-in forwards;
 `;
 
 class GridTile extends React.Component {
