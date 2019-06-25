@@ -34,7 +34,7 @@ class ContainerComponent extends React.Component {
           <DialogTitle id="alert-dialog-title">{"안녕하세요 문지환입니다."}</DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              풀스택 3년차 개발자로, 꾸준히 정진하기 위한 노력을 게을리하지 않고 있습니다. 취미는 개발입니다.
+              문개발입니다.
             </DialogContentText>
           </DialogContent>
           <DialogActions>

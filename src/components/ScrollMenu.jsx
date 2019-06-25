@@ -60,10 +60,11 @@ class ScrollMenuComponent extends React.Component {
       { icon: 'H', name: 'Home', to: '/' },
       { icon: 'A', name: 'About', to: '/about' },
       { icon: 'B', name: 'Blog', to: '/blog' },
-      { icon: 'P', name: 'Portfolio', to: '/portfolio' },
-      { icon: 'C', name: 'Contact', to: '/contact' },
+      // { icon: 'P', name: 'Portfolio', to: '/portfolio' },
+      // { icon: 'C', name: 'Contact', to: '/contact' },
       { icon: 'P', name: 'Posts', to: '/posts' },
-      { icon: 'T', name: 'Test', to: '/test' },
+      { icon: 'G', name: 'Grid', to: '/grid' },
+      { icon: 'F', name: 'Flex', to: '/flex' },
       { icon: 'M', name: 'Move', to: '/move' },
     ];
     

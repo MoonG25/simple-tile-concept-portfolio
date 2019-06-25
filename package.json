@@ -6,8 +6,9 @@
   "license": "MIT",
   "homepage": "http://MoonG25.github.io/simple-tile-concept-portfolio",
   "dependencies": {
-    "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^3.0.2",
+    "@material-ui/core": "^4.1.2",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/lab": "^4.0.0-alpha.17",
     "axios": "^0.18.0",
     "connected-react-router": "^6.4.0",
     "history": "^4.9.0",
@@ -23,17 +24,23 @@
     "styled-components": "^4.3.1"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "gh-pages": "^2.0.1",
     "react-scripts": "^3.0.1",
     "redux-devtools-extension": "^2.13.8"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"

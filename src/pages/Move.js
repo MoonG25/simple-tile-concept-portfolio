@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import './Move.css';
 
 // redux
 
@@ -8,7 +7,7 @@ import './Move.css';
 import ContainerComponent from '../components/Container';
 import GridContainer from '../components/grid/Container';
 import GridSection from '../components/grid/Section';
-import Box from '../components/Box';
+import Box from '../components/move/Box';
 
 const RemoteController = styled.div`
   position: fixed;
